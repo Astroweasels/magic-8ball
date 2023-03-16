@@ -5,12 +5,5 @@ jobs:
   MysteryJob:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-        touch hello.txt
-        mkdir folder
-        cd folder
-        touch inner_hello.txt
-        cd ..
-        ls
-
-        
+      - run: touch hello.txt
+      - run: ls
