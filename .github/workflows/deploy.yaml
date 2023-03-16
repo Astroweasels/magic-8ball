@@ -1,12 +1,24 @@
 name: This is my whatever
 on: push
+permissions:
+  id-token: write # This is required for requesting the JWT
+  contents: read  # This is required for actions/checkout
 
 jobs: 
   DeployApp:
     runs-on: ubuntu-latest
+    
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
-      # - name:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::840905575859:role/GithubAppDeployRole
+          role-session-name: samplerolesession
+          aws-region: us-east-1
+
+      - name: Put App in S3
+        run: aws s3 cp src s3://kole-magic-8-ball-application/ --recursive
