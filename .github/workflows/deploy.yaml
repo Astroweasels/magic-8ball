@@ -3,13 +3,11 @@ on: push
 
 jobs: 
   DeployApp:
-    # provisions a clean virtual machine with ubuntu installed on it
     runs-on: ubuntu-latest
 
-      # checkout this current github repository
-      # "git clone"
-    - name: Checkout
-      uses: actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: List files
-      run: ls
+      - name: List files
+        run: ls
