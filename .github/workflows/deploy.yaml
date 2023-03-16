@@ -20,4 +20,5 @@ jobs:
           role-session-name: samplerolesession
           aws-region: us-east-1
 
-      # - name: Put App in S3
+      - name: Put App in S3
+        run: aws s3 cp src s3://kole-magic-8-ball-application/ --recursive
