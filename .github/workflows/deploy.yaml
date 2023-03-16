@@ -2,8 +2,14 @@ name: This is my whatever
 on: push
 
 jobs: 
-  MysteryJob:
+  DeployApp:
+    # provisions a clean virtual machine with ubuntu installed on it
     runs-on: ubuntu-latest
-    steps:
-      - run: touch hello.txt
-      - run: ls
+
+      # checkout this current github repository
+      # "git clone"
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: List files
+      run: ls
