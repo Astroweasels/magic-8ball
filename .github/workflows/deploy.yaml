@@ -2,7 +2,15 @@ name: This is my whatever
 on: push
 
 jobs: 
-  printText:
-    runs-on: windows-latest
+  MysteryJob:
+    runs-on: ubuntu-latest
     steps:
-      - run: tree
+      - run: |
+        touch hello.txt
+        mkdir folder
+        cd folder
+        touch inner_hello.txt
+        cd ..
+        ls
+
+        
