@@ -4,6 +4,6 @@ function generateRandomNumberBetween(number) {
 }
 
 function generate8BallMessage() {
-    let messages = ["Yes", "No", "Maybe", "Shake Again","Kyle is a bitch" , "Prepare to Die", "Omae Wa Mou Shin De Ru"];
+    let messages = ["Yes", "No", "Maybe", "Shake Again","Love You!" , "It is what it is","Don't count on it :C"];
     document.getElementById("8-ball-message").innerHTML = messages[generateRandomNumberBetween(messages.length)];
 }
